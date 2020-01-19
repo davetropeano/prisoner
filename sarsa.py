@@ -71,6 +71,9 @@ if __name__ == "__main__":
     print ("Score over time: ", sum(rewards)/TOTAL_EPISODES)
     print(Q)
     pyplot.plot(rewards, 'b--')
+    pyplot.title('SARSA: Alpha=0.25, Gamma=0.90')
+    pyplot.xlabel('Game')
+    pyplot.ylabel('Reward')
     pyplot.show()
 
     with open("pd_qTable_sarsa.pkl", 'wb') as f:
