@@ -11,7 +11,7 @@ TOTAL_EPISODES = 100
 MAX_STEPS = 50
 
 LEARNING_RATE = 0.25 #0.81
-GAMMA = 0.90 # 0.96
+GAMMA = 0.96 # 0.96
 
 # since 0 means cooperate we are initializing the Q table to always cooperate
 # unless a state has been visited enough times to make defect the more dominant strategy
@@ -70,6 +70,9 @@ if __name__ == "__main__":
     print ("Score over time: ", sum(rewards)/TOTAL_EPISODES)
     print(Q)
     pyplot.plot(rewards, 'b--')
+    pyplot.title(f'Q: Alpha={LEARNING_RATE}, Gamma={GAMMA}')
+    pyplot.xlabel('Game')
+    pyplot.ylabel('Reward')
     pyplot.show()
 
     with open("pd_qTable_qlearning.pkl", 'wb') as f:

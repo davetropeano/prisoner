@@ -21,7 +21,6 @@ class ActionSpace:
 
 class PrisonersDilemma:
     def __init__(self, strategy=strategy.Strategy, moves_in_memory=5, max_score=500):
-        super().__init__()
         self.max_score = max_score
         self.my_score = self.their_score = 0
         self.move = 0
